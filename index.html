@@ -156,8 +156,15 @@
             if (evt.detail.path === '/api/analyze') {
                 evt.preventDefault();
                 
-                const file = evt.detail.parameters.image;
+                //const file = evt.detail.parameters.image;
+                const ie = document.getElementById('file-input');
+                const file = ie.files[0];
+                console.log(evt.detail);
+                console.log(evt.parameters);
                 if (!file) return;
+                console.log("File!");
+                console.log(file);
+                console.log(typeof file);
                 
                 const reader = new FileReader();
                 reader.onload = function(e) {
